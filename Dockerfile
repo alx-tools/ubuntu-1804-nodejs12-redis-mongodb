@@ -43,6 +43,10 @@ RUN mkdir /tmp/node_packages
 COPY package.json /tmp/node_packages/package.json
 RUN cd /tmp/node_packages && npm install
 
+# Man
+RUN apt-get -y install man manpages-dev manpages-posix-dev
+RUN yes | unminimize
+
 # SSH
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
