@@ -13,5 +13,8 @@ RUN apt-get install -y mongodb-org
 ADD init.d-mongod /etc/init.d/mongod
 RUN chmod u+x /etc/init.d/mongod
 
+ADD run.sh /etc/sandbox_run.sh
+RUN chmod u+x /etc/sandbox_run.sh
+
 # start run!
-CMD ["./tmp/run.sh"]
+CMD ["./etc/sandbox_run.sh"]
